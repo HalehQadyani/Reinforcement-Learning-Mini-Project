@@ -1,0 +1,9 @@
+panda-gym==2.0.0
+pybullet
+stable-baselines3[extra]
+sb3_contrib
+gym==0.21.0            
+numpy
+pandas
+matplotlib
+tqdm
