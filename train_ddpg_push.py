@@ -5,7 +5,7 @@ Saves model to: ./models/ddpg_pandapush.zip
 """
 
 import os
-import gym
+import gymnasium as gym
 import numpy as np
 import panda_gym
 from stable_baselines3 import DDPG
@@ -16,7 +16,7 @@ from callbacks import SuccessLoggerCallback
 os.makedirs("models", exist_ok=True)
 os.makedirs("logs", exist_ok=True)
 
-ENV_ID = "PandaPush-v2"
+ENV_ID = "PandaPush-v3"
 TIMESTEPS = 800_000  # pushing tends to need more samples
 
 def make_env():
@@ -30,7 +30,7 @@ def main():
     action_noise = NormalActionNoise(mean=np.zeros(n_actions), sigma=0.15 * np.ones(n_actions))
 
     model = DDPG(
-        "MlpPolicy",
+        "MultiInputPolicy",
         env,
         action_noise=action_noise,
         verbose=1,

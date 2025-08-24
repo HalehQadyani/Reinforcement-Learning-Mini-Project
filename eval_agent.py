@@ -7,7 +7,7 @@ Usage:
 
 import argparse
 import os
-import gym
+import gymnasium as gym
 import numpy as np
 from stable_baselines3 import DDPG
 import panda_gym
